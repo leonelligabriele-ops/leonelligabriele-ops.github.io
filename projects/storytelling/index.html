@@ -52,7 +52,7 @@
 
     <div class="player" id="player">
       <div class="stage" id="stage" role="region" aria-label="Prototype screen">
-        <img id="screen" src="screens/01-theme.png" alt="">
+        <img id="screen" src="screens/01-theme.webp" alt="">
       </div>
       <div class="caption">
         <span class="step" id="step"></span>
@@ -106,7 +106,7 @@
     var trail = [], current = 'theme';
 
     // Preload all screens so clicks feel instant.
-    Object.keys(SCREENS).forEach(function (k) { new Image().src = 'screens/' + SCREENS[k].img + '.png'; });
+    Object.keys(SCREENS).forEach(function (k) { new Image().src = 'screens/' + SCREENS[k].img + '.webp'; });
 
     function nextOf(key) { var s = SCREENS[key]; return s.next || (s.go && s.go[0][1]) || null; }
 
@@ -114,7 +114,7 @@
       if (push) trail.push(current);
       current = key;
       var s = SCREENS[key];
-      img.src = 'screens/' + s.img + '.png';
+      img.src = 'screens/' + s.img + '.webp';
       img.alt = s.text.replace(/<[^>]+>/g, '');
       stage.querySelectorAll('.hotspot').forEach(function (h) { h.remove(); });
       (s.go || []).forEach(function (g) {
