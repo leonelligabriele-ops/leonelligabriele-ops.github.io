@@ -11,8 +11,10 @@
     .tree-hero figure { margin: 0; }
     .tree-hero img { background: #f3ede8; }
     .steps { list-style: none; padding: 0; margin: 0 0 16px; counter-reset: s; }
-    .steps li { position: relative; padding-left: 36px; margin-bottom: 14px; counter-increment: s; }
-    .steps li::before {
+    .steps ul { padding-left: 20px; margin: 6px 0 0; }
+    .steps ul li { margin-bottom: 4px; }
+    .steps > li { position: relative; padding-left: 36px; margin-bottom: 14px; counter-increment: s; }
+    .steps > li::before {
       content: counter(s); position: absolute; left: 0; top: 1px; width: 24px; height: 24px; border-radius: 50%;
       background: var(--soft); border: 1px solid var(--line); font-size: 0.8rem; font-weight: 600;
       display: flex; align-items: center; justify-content: center;
@@ -46,15 +48,21 @@
     <div class="tree-hero">
       <figure>
         <a href="app/"><img src="screenshots/tree.png" alt="BioSketch canvas showing an exploration tree: a Sketch card developed into an Explore card, which branches into three variations (new representation, new interaction, new interpretation); the last is developed into a Refine card." width="712" height="798"></a>
-        <figcaption>One exploration in BioSketch: an ACL rehabilitation idea, from sketch to near-final app.</figcaption>
+        <figcaption>One exploration in BioSketch: a smartwatch activity app for people over 75, from sketch to near-final app.</figcaption>
       </figure>
       <div>
         <p><b>How this tree grew:</b></p>
         <ol class="steps">
-          <li><span class="pill sketch">Sketch</span> A physiotherapist describes the idea: let a patient six weeks after ACL surgery see how far their knee bends compared with the start, and notice whether pain rises on days with more exercise. The AI answers with a rough, hand-drawn-looking prototype.</li>
+          <li><span class="pill sketch">Sketch</span> The idea: an app for people over 75 who live at home and wear a smartwatch. It should encourage them to move a little every day without making them feel judged. It must be very simple, and family or a physiotherapist may look at it too. The AI answers with a rough, hand-drawn-looking prototype.</li>
           <li><span class="pill explore">Explore</span> <b>Develop in Explore</b> moves the idea up one level, from “what could this be?” to “which way could it go?”.</li>
-          <li><b>Explore variations</b> branches it three ways: a new <i>representation</i> (each day drawn as a stroke of the leg), a new <i>interaction</i> (guess first, then the data answers), and a new <i>interpretation</i> (progress compared with the patient's own first week).</li>
-          <li><span class="pill refine">Refine</span> One branch is chosen and developed into a near-final app with a patient view and a physio view. The other branches stay on the canvas.</li>
+          <li><b>Explore variations</b> branches it three ways:
+            <ul>
+              <li>a new <i>representation</i>: walking as a journey along one path, where every day moves them forward;</li>
+              <li>a new <i>interaction</i>: one big button, “How did I do yesterday?”, that answers aloud;</li>
+              <li>a new <i>interpretation</i>: each day compared with their own usual, not a target, so an unwell week reads as rest, not failure.</li>
+            </ul>
+          </li>
+          <li><span class="pill refine">Refine</span> The interpretation branch is developed into a near-final app with a “For me” view and a “Family &amp; physio” view. The other branches stay on the canvas.</li>
         </ol>
         <div class="actions">
           <a class="button" href="app/">Open the live tree →</a>
@@ -76,20 +84,28 @@
     <h2>Inside the cards</h2>
     <div class="gallery">
       <figure>
-        <img src="screenshots/sketch.png" alt="A hand-drawn style Sketch prototype of the knee-bend idea" loading="lazy">
-        <figcaption><b>Sketch.</b> Rough and hand-drawn looking. Undecided parts stay as “?” boxes.</figcaption>
+        <img src="screenshots/sketch.png" alt="A hand-drawn style Sketch prototype of the daily movement idea" loading="lazy">
+        <figcaption><b>Sketch.</b> A very simple screen for them and a longer view for family or physio. Open questions stay as “?” boxes.</figcaption>
       </figure>
       <figure>
-        <img src="screenshots/explore-representation.png" alt="An Explore prototype drawing each day as a stroke of the lower leg, fanning out over six weeks" loading="lazy">
-        <figcaption><b>Explore: new representation.</b> Each day is one stroke of the leg, so six weeks open like a fan.</figcaption>
+        <img src="screenshots/explore-representation.png" alt="An Explore prototype showing walking as a winding path: 113 km walked since 17 August, with leaves marking longer walks outside" loading="lazy">
+        <figcaption><b>Explore: new representation.</b> Walking as a journey: 113 km since August, with leaves marking longer walks outside.</figcaption>
       </figure>
       <figure>
-        <img src="screenshots/explore-interaction.png" alt="An Explore prototype where the patient guesses their knee bend before seeing the real value" loading="lazy">
-        <figcaption><b>Explore: new interaction.</b> Patient and physio guess first, then the data answers.</figcaption>
+        <img src="screenshots/explore-interaction.png" alt="An Explore prototype with one large button that answers aloud how yesterday went" loading="lazy">
+        <figcaption><b>Explore: new interaction.</b> One big button that answers aloud, compared with their own usual days.</figcaption>
       </figure>
       <figure>
-        <img src="screenshots/refine.png" alt="A Refine prototype with patient and physio views, and the AI's Why this design explanation" loading="lazy">
-        <figcaption><b>Refine.</b> A near-final app with the AI's “Why this design?” explanation alongside.</figcaption>
+        <img src="screenshots/explore-interpretation.png" alt="An Explore prototype comparing each day with the person's own usual and marking days with a raised resting heart rate" loading="lazy">
+        <figcaption><b>Explore: new interpretation.</b> Each day compared with their own usual. Days with a raised resting heart rate are marked.</figcaption>
+      </figure>
+      <figure>
+        <img src="screenshots/refine.png" alt="A Refine prototype in large type: 2,323 steps yesterday, a kind sentence, and the week as seven circles with levels written in words" loading="lazy">
+        <figcaption><b>Refine: “For me”.</b> Large type, one kind sentence, and levels written in words as well as colour.</figcaption>
+      </figure>
+      <figure>
+        <img src="screenshots/refine-family.png" alt="The family and physio view of the Refine prototype" loading="lazy">
+        <figcaption><b>Refine: “Family &amp; physio”.</b> The eight weeks, with the unwell week explained in one sentence.</figcaption>
       </figure>
     </div>
 
