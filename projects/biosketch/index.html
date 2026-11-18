@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BioSketch · Gabriele Leonelli</title>
+  <meta name="description" content="BioSketch: an LLM-programming tool for non-linear, slow design exploration with biodata.">
+  <link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+  <main class="wide">
+    <a class="back" href="../../">← Gabriele Leonelli</a>
+
+    <h1>BioSketch</h1>
+    <p class="tagline">An LLM-programming tool for non-linear, slow design exploration with biodata</p>
+
+    <dl class="facts">
+      <dt>Context</dt><dd>M.Sc. thesis in Human–Computer Interaction (15 hp), then Research Assistant work, Department of Informatics, Umeå University, 2026</dd>
+      <dt>Supervisor</dt><dd>Dr. Pedro Sanches</dd>
+      <dt>Methods</dt><dd>Human–AI co-creation sessions, think-aloud protocols, artifact analysis</dd>
+      <dt>Output</dt><dd>Full paper submitted to Nordes 2027 (under review)</dd>
+      <dt>Code</dt><dd><a href="https://github.com/leonelligabriele-ops/design_exploration_AI">github.com/leonelligabriele-ops/design_exploration_AI</a></dd>
+    </dl>
+
+    <h2>Explore an example session</h2>
+    <p>Follow one idea from a rough sketch to a near-final app. In the example, a physiotherapist wants a patient six weeks into ACL rehabilitation to see how far their knee bends each day compared with where they started. Every prototype runs live in your browser on synthetic rehabilitation data. Next to each prototype are the AI's explanation and the exact prompt the tool sent.</p>
+    <p><a class="button" href="session.html">Open the example session →</a></p>
+    <p class="note">The example prototypes were written by hand, following the exact prompts BioSketch sends, to show typical output. Live AI output varies from run to run.</p>
+
+    <div class="gallery">
+      <figure>
+        <img src="screenshots/sketch.png" alt="A hand-drawn style Sketch prototype of the knee-bend idea" loading="lazy">
+        <figcaption><b>Sketch.</b> A rough, hand-drawn-looking first prototype. Undecided parts stay as “?” boxes.</figcaption>
+      </figure>
+      <figure>
+        <img src="screenshots/explore-representation.png" alt="An Explore prototype drawing each day as a stroke of the lower leg, fanning out over six weeks" loading="lazy">
+        <figcaption><b>Explore.</b> A new representation: each day is one stroke of the leg, so six weeks of progress open like a fan.</figcaption>
+      </figure>
+      <figure>
+        <img src="screenshots/explore-interaction.png" alt="An Explore prototype where the patient guesses their knee bend before seeing the real value" loading="lazy">
+        <figcaption><b>Explore.</b> A new interaction: patient and physio guess first, then the data answers.</figcaption>
+      </figure>
+      <figure>
+        <img src="screenshots/refine.png" alt="A Refine prototype with patient and physio views, and the AI's Why this design explanation" loading="lazy">
+        <figcaption><b>Refine.</b> A near-final app with a patient view and a physio view, plus the AI's “Why this design?”.</figcaption>
+      </figure>
+    </div>
+
+    <h2>What it is</h2>
+    <p>BioSketch lets people prototype applications that use bodily data (biodata) by describing or drawing an idea. An LLM writes the code. Instead of one chat that keeps overwriting the same app, every idea becomes a <b>card on a canvas</b> with its own running prototype, and new ideas branch from old ones as a tree:</p>
+    <ul>
+      <li><b>Three prototype levels:</b> Sketch, Explore and Refine. Each one asks the AI for a different kind of answer, from rough to polished.</li>
+      <li><b>Branching moves:</b> <i>What else?</i>, <i>Keep / Change</i>, <i>Explore variations</i> and <i>Combine</i>. These keep exploration open instead of converging on the first answer.</li>
+      <li><b>The AI talks back:</b> it explains its design choices (“Why this design?”), and a discussion panel lets you question it.</li>
+      <li><b>Real biodata:</b> a CSV file, a webcam (pose tracking with MediaPipe) or a Bluetooth sensor streams into every prototype at once.</li>
+      <li><b>Research instrument:</b> every prompt is recorded, and a session can be exported as a single readable file, like the example above.</li>
+    </ul>
+
+    <h2>The study</h2>
+    <p>For my M.Sc. thesis, I studied how experts and non-experts use BioSketch to come up with and prototype biodata applications. I ran human–AI co-creation sessions with think-aloud protocols and analysed the prototypes people made.</p>
+    <p>As a Research Assistant with Dr. Pedro Sanches, I extended the dataset and analysis into a full paper. It shows how participants and LLMs make sense of biodata through <b>metaphor</b>, how frictions between their metaphors expose biases, and how ideas emerge as they are re-articulated. It argues for critical attention to LLM-assisted coding when it is applied to bodies and health.</p>
+
+    <footer>© 2026 Gabriele Leonelli</footer>
+  </main>
+</body>
+</html>
