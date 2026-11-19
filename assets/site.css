@@ -132,9 +132,8 @@ section { scroll-margin-top: 24px; }
 .skills dt { font-family: var(--f-ui); font-weight: 600; font-size: 0.9rem; }
 .skills dd { margin: 0 0 14px; }
 
+.proj { gap: 18px; padding: 28px 0 36px; }
 @media (min-width: 760px) {
-  .proj { grid-template-columns: 300px 1fr; gap: 28px; }
-  .proj .when { grid-column: 1 / -1; }
   .skills { grid-template-columns: 200px 1fr; }
 }
 @media (min-width: 900px) {
