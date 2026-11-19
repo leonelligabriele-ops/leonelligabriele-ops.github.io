@@ -147,6 +147,40 @@ section { scroll-margin-top: 24px; }
   .portrait { width: 112px; height: 112px; }
 }
 
+/* ---------- BioSketch tree figure (home page) ----------
+   Drawn as real text in the tool's own style, so it stays readable at any width.
+   Colours are the tool's (its canvas is always light), in both site colour modes. */
+.tree-fig {
+  display: grid; align-items: center; text-decoration: none; color: #1d1b19;
+  grid-template-columns: minmax(0,1fr) 56px minmax(0,1fr) 44px minmax(0,1fr) 56px minmax(0,1fr);
+  grid-template-rows: repeat(3, auto); row-gap: 14px;
+  padding: 26px 22px; border-radius: var(--r-img); background: #F5EDE6; font-family: var(--f-ui);
+}
+.tree-fig:hover .tnode { border-color: #d8ccc0; }
+.tnode {
+  background: #FFFCF9; border: 1px solid #ece2d8; border-top: 4px solid var(--c);
+  border-radius: 10px; padding: 9px 11px 10px; min-width: 0;
+}
+.tnode .st { display: inline-block; font-size: 0.7rem; font-weight: 600; padding: 1px 8px; border-radius: 20px; background: var(--pb); color: var(--pt); }
+.tnode .tt { display: block; font-size: 0.86rem; font-weight: 600; line-height: 1.25; margin-top: 6px; }
+.tnode .ok { display: block; font-size: 0.72rem; color: #0b7a4f; margin-top: 5px; }
+.t-sk { --c: #E7A63A; --pb: #FDF0C4; --pt: #7a5200; }
+.t-ex { --c: #7B5CF0; --pb: #EBE5FF; --pt: #4B32B8; }
+.t-rf { --c: #10A36B; --pb: #D8F5E6; --pt: #0B6B43; }
+.tconn { position: relative; height: 100%; min-height: 24px; }
+.tconn svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.tconn .lbl { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -150%); font-size: 0.62rem; font-weight: 600; white-space: nowrap; color: var(--pt); }
+.tconn.down { display: none; }
+@media (max-width: 640px) {
+  .tree-fig { grid-template-columns: 1fr; grid-template-rows: none; row-gap: 0; padding: 18px; }
+  .tree-fig > * { grid-column: 1 !important; grid-row: auto !important; }
+  .tconn { display: none; }
+  .tconn.down { display: block; height: 30px; text-align: center; font-size: 0.72rem; font-weight: 600; line-height: 30px; color: var(--pt); }
+  .tnode + .tnode { margin-top: 8px; }
+  .tnode .ok { display: none; }
+  .tnode { padding: 7px 11px 8px; }
+}
+
 /* ---------- Demo pop-up (assets/demo-modal.js) ---------- */
 .demo-modal {
   width: min(1200px, 94vw); height: min(860px, 92vh); max-width: 100vw; max-height: 100vh;
