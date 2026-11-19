@@ -19,11 +19,15 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="BioSketch exploration tree: a sketch developed into three explored variations and a refined app">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="../../assets/site.css?v=6">
+  <link rel="stylesheet" href="../../assets/site.css?v=7">
   <style>
-    .tree-hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px 32px; align-items: start; margin-top: 8px; }
+    .tree-hero { display: grid; grid-template-columns: 1fr; gap: 28px; margin-top: 8px; }
     .tree-hero figure { margin: 0; }
-    .tree-hero img { background: #f3ede8; }
+    .phone-only { display: none; }
+    @media (max-width: 760px) { .phone-only { display: block; } }
+    .gallery.one { grid-template-columns: 1fr; gap: 36px; }
+    .gallery.one img { border: 1px solid var(--rule); }
+    .tree-hero figure { margin: 0; }
     .steps { list-style: none; padding: 0; margin: 0 0 16px; counter-reset: s; }
     .steps ul { padding-left: 20px; margin: 6px 0 0; }
     .steps ul li { margin-bottom: 4px; }
@@ -38,7 +42,6 @@
     .explore { background: #ebe5ff; color: #4b32b8; }
     .refine  { background: #d8f5e6; color: #0b6b43; }
     .actions { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; margin-top: 8px; }
-    @media (max-width: 720px) { .tree-hero { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -52,7 +55,7 @@
       <dt>Context</dt><dd>M.Sc. thesis in Human–Computer Interaction (15 hp), then Research Assistant work, Department of Informatics, Umeå University, 2026</dd>
       <dt>Supervisor</dt><dd>Dr. Pedro Sanches</dd>
       <dt>Methods</dt><dd>Human–AI co-creation sessions, think-aloud protocols, artifact analysis</dd>
-      <dt>Output</dt><dd>Full paper submitted to Nordes 2027 (under review)</dd>
+      <dt>Output</dt><dd>Full paper accepted at Nordes 2027</dd>
       <dt>Code</dt><dd><a href="https://github.com/leonelligabriele-ops/design_exploration_AI">github.com/leonelligabriele-ops/design_exploration_AI</a></dd>
     </dl>
 
@@ -61,8 +64,21 @@
 
     <div class="tree-hero">
       <figure>
-        <a href="app/"><img src="screenshots/tree.png" alt="BioSketch canvas showing an exploration tree: a Sketch card developed into an Explore card, which branches into three variations (new representation, new interaction, new interpretation); the last is developed into a Refine card." width="712" height="798"></a>
-        <figcaption>One exploration in BioSketch: a smartwatch activity app for people over 75, from sketch to near-final app.</figcaption>
+        <a class="tree-fig" href="app/" data-demo="app/" data-demo-title="BioSketch: live exploration tree (demo mode, synthetic data)" aria-label="Open the live exploration tree">
+          <div class="tnode t-sk" style="grid-column:1;grid-row:2"><span class="st">Sketch</span><span class="tt">Move a little every day</span><span class="ok">● Preview ready</span></div>
+          <div class="tconn t-ex" style="grid-column:2;grid-row:2"><svg viewBox="0 0 40 10" preserveAspectRatio="none"><path d="M0 5 H40" stroke="#7B5CF0" stroke-width="2" vector-effect="non-scaling-stroke" fill="none"/></svg><span class="lbl">Develop</span></div>
+          <div class="tconn down t-ex">↓ Develop</div>
+          <div class="tnode t-ex" style="grid-column:3;grid-row:2"><span class="st">Explore</span><span class="tt">Move a little every day</span></div>
+          <div class="tconn t-ex" style="grid-column:4;grid-row:1/4"><svg viewBox="0 0 40 300" preserveAspectRatio="none"><path d="M0 150 C 22 150, 18 50, 40 50 M0 150 H40 M0 150 C 22 150, 18 250, 40 250" stroke="#7B5CF0" stroke-width="2" vector-effect="non-scaling-stroke" fill="none"/></svg></div>
+          <div class="tconn down t-ex">↓ Explore variations</div>
+          <div class="tnode t-ex" style="grid-column:5;grid-row:1"><span class="st">Explore</span><span class="tt">New representation</span><span class="ok">● Preview ready</span></div>
+          <div class="tnode t-ex" style="grid-column:5;grid-row:2"><span class="st">Explore</span><span class="tt">New interaction</span><span class="ok">● Preview ready</span></div>
+          <div class="tnode t-ex" style="grid-column:5;grid-row:3"><span class="st">Explore</span><span class="tt">New interpretation</span><span class="ok">● Preview ready</span></div>
+          <div class="tconn t-rf" style="grid-column:6;grid-row:3"><svg viewBox="0 0 40 10" preserveAspectRatio="none"><path d="M0 5 H40" stroke="#10A36B" stroke-width="2" vector-effect="non-scaling-stroke" fill="none"/></svg><span class="lbl">Develop</span></div>
+          <div class="tconn down t-rf">↓ Develop</div>
+          <div class="tnode t-rf" style="grid-column:7;grid-row:3"><span class="st">Refine</span><span class="tt">Move a little: app</span><span class="ok">● Preview ready</span></div>
+        </a>
+        <figcaption>One exploration in BioSketch: a smartwatch activity app for people over 75, from sketch to near-final app. Click the tree to open it live.</figcaption>
       </figure>
       <div>
         <p><b>How this tree grew:</b></p>
@@ -82,6 +98,7 @@
           <a class="button" href="app/" data-demo="app/" data-demo-title="BioSketch: live exploration tree (demo mode, synthetic data)">Open the live tree →</a>
           <a href="session.html">or read the session card by card</a>
         </div>
+        <p class="note phone-only" style="margin-top:12px"><b>On a phone?</b> The live tree works best on a laptop or tablet. You can still open it, or read the session card by card instead.</p>
         <p class="note" style="margin-top:12px">The live tree is the real BioSketch interface in demo mode. Click any card to open its prototype, which runs on synthetic data, and its “Why this design?” explanation. You can also branch new ideas yourself. Without an AI connected, new cards get placeholder output. The example prototypes were written by hand, following the exact prompts BioSketch sends, to show typical output.</p>
       </div>
     </div>
@@ -96,30 +113,27 @@
     </ul>
 
     <h2>Inside the cards</h2>
-    <div class="gallery">
+    <p>Each card holds a running prototype, and the AI explains its design choices beside it, so they can be questioned. These are the five cards of the tree above, as they look in the live tool.</p>
+    <div class="gallery one">
       <figure>
-        <img src="screenshots/sketch.png" alt="A hand-drawn style Sketch prototype of the daily movement idea" loading="lazy">
-        <figcaption><b>Sketch.</b> A very simple screen for them and a longer view for family or physio. Open questions stay as “?” boxes.</figcaption>
+        <img src="screenshots/sketch-v2.webp" alt="A Sketch card: two hand-drawn screens, with the AI’s explanation beside them" loading="lazy" width="1400">
+        <figcaption><b>Sketch.</b> A very simple screen for them and a longer view for family or physio. Open questions stay as “?” boxes. Beside it, the AI explains what the sketch shows (“What does it show?”).</figcaption>
       </figure>
       <figure>
-        <img src="screenshots/explore-representation.png" alt="An Explore prototype showing walking as a winding path: 113 km walked since 17 August, with leaves marking longer walks outside" loading="lazy">
+        <img src="screenshots/explore-representation-v2.webp" alt="An Explore card showing walking as a winding path, with the AI’s Why this design explanation" loading="lazy" width="1400">
         <figcaption><b>Explore: new representation.</b> Walking as a journey: 113 km since August, with leaves marking longer walks outside.</figcaption>
       </figure>
       <figure>
-        <img src="screenshots/explore-interaction.png" alt="An Explore prototype with one large button that answers aloud how yesterday went" loading="lazy">
+        <img src="screenshots/explore-interaction-v2.webp" alt="An Explore card with one large button, How did I do yesterday, and the AI’s explanation" loading="lazy" width="1400">
         <figcaption><b>Explore: new interaction.</b> One big button that answers aloud, compared with their own usual days.</figcaption>
       </figure>
       <figure>
-        <img src="screenshots/explore-interpretation.png" alt="An Explore prototype comparing each day with the person's own usual and marking days with a raised resting heart rate" loading="lazy">
-        <figcaption><b>Explore: new interpretation.</b> Each day compared with their own usual. Days with a raised resting heart rate are marked.</figcaption>
+        <img src="screenshots/explore-interpretation-v2.webp" alt="An Explore card with a calendar comparing each day with the person’s usual, and the AI’s explanation" loading="lazy" width="1400">
+        <figcaption><b>Explore: new interpretation.</b> Each day compared with their own usual, not a target. Days with a raised resting heart rate are marked.</figcaption>
       </figure>
       <figure>
-        <img src="screenshots/refine.png" alt="A Refine prototype in large type: 2,323 steps yesterday, a kind sentence, and the week as seven circles with levels written in words" loading="lazy">
-        <figcaption><b>Refine: “For me”.</b> Large type, one kind sentence, and levels written in words as well as colour.</figcaption>
-      </figure>
-      <figure>
-        <img src="screenshots/refine-family.png" alt="The family and physio view of the Refine prototype" loading="lazy">
-        <figcaption><b>Refine: “Family &amp; physio”.</b> The eight weeks, with the unwell week explained in one sentence.</figcaption>
+        <img src="screenshots/refine-v2.webp" alt="A Refine card: 2,323 steps yesterday and the week as seven circles, with the AI’s explanation" loading="lazy" width="1400">
+        <figcaption><b>Refine.</b> A near-final app with a “For me” view and a “Family &amp; physio” view: large type, one kind sentence, levels written in words as well as colour.</figcaption>
       </figure>
     </div>
 
@@ -130,7 +144,17 @@
     <p>For my M.Sc. thesis, I studied how experts and non-experts use BioSketch to come up with and prototype biodata applications. I ran human–AI co-creation sessions with think-aloud protocols and analysed the prototypes people made.</p>
     <p>As a Research Assistant with Dr. Pedro Sanches, I extended the dataset and analysis into a full paper. It shows how participants and LLMs make sense of biodata through <b>metaphor</b>, how frictions between their metaphors expose biases, and how ideas emerge as they are re-articulated. It argues for critical attention to LLM-assisted coding when it is applied to bodies and health.</p>
 
-    <footer>© 2026 Gabriele Leonelli</footer>
+    <h2>My role</h2>
+    <ul>
+      <li>Designed and built BioSketch.</li>
+      <li>Planned and ran the human–AI co-creation sessions with experts and non-experts.</li>
+      <li>Analysed the think-aloud data and the prototypes participants made.</li>
+      <li>First author of the Nordes 2027 paper, with Dr. Pedro Sanches.</li>
+    </ul>
+
+    <p class="next-proj">Next project: <a href="../storytelling/">AI storytelling for children and parents →</a></p>
+
+    <footer>Gabriele Leonelli · <a href="mailto:gabriele.leonelli@umu.se">gabriele.leonelli@umu.se</a> · <a href="../../cv.pdf">CV (PDF)</a></footer>
   </main>
   <script src="../../assets/demo-modal.js?v=1" defer></script>
 </body>
