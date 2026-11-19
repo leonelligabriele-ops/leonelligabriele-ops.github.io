@@ -127,7 +127,7 @@ section { scroll-margin-top: 24px; }
 .proj { display: grid; grid-template-columns: 1fr; gap: 14px; padding: 26px 0; }
 .proj:first-of-type { padding-top: 4px; }
 .thumb { display: block; overflow: hidden; border-radius: var(--r-img); background: var(--soft); align-self: start; }
-.thumb img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+.thumb img { width: 100%; height: auto; }
 .skills { display: grid; grid-template-columns: 1fr; gap: 2px 28px; margin: 0; }
 .skills dt { font-family: var(--f-ui); font-weight: 600; font-size: 0.9rem; }
 .skills dd { margin: 0 0 14px; }
@@ -145,6 +145,32 @@ section { scroll-margin-top: 24px; }
   h1 { font-size: 2.1rem; }
   .intro { grid-template-columns: 1fr; gap: 18px; }
   .portrait { width: 112px; height: 112px; }
+}
+
+/* ---------- Demo pop-up (assets/demo-modal.js) ---------- */
+.demo-modal {
+  width: min(1200px, 94vw); height: min(860px, 92vh); max-width: 100vw; max-height: 100vh;
+  padding: 0; border: 1px solid var(--rule); border-radius: 18px;
+  background: var(--bg); color: var(--ink); overflow: hidden;
+}
+.demo-modal[open] { display: flex; flex-direction: column; }
+.demo-modal::backdrop { background: rgba(9, 13, 19, 0.62); }
+.demo-bar {
+  display: flex; align-items: center; gap: 16px; padding: 8px 10px 8px 20px;
+  border-bottom: 1px solid var(--rule); font-family: var(--f-ui);
+}
+.demo-title { flex: 1; margin: 0; font-family: var(--f-ui); font-weight: 600; font-size: 1rem; }
+.demo-full { font-size: 0.88rem; white-space: nowrap; }
+.demo-close {
+  width: 44px; height: 44px; flex: none; border-radius: 50%; cursor: pointer;
+  border: 1px solid var(--rule); background: var(--bg); color: var(--ink); font-size: 1.05rem;
+}
+.demo-close:hover { background: var(--soft); }
+.demo-frame { flex: 1; width: 100%; border: 0; background: var(--bg); }
+.modal-open, .modal-open body { overflow: hidden; }
+@media (max-width: 640px) {
+  .demo-modal { width: 100vw; height: 100dvh; border-radius: 0; border: 0; }
+  .demo-full { display: none; }
 }
 
 /* ---------- Print ---------- */

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clickable prototype · AI storytelling · Gabriele Leonelli</title>
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="../../assets/site.css?v=5">
+  <link rel="stylesheet" href="player.css?v=1">
+  <style>
+    /* Fits the player into whatever box shows it (the pop-up on the home page). */
+    body { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 12px; }
+    .wrap { width: 100%; max-width: calc((100vh - 150px) * 16 / 9); min-width: 280px; }
+    .note { margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="player" id="player">
+      <div class="stage" id="stage" role="region" aria-label="Prototype screen">
+        <img id="screen" src="screens/01-theme.webp?v=2" alt="">
+      </div>
+      <div class="caption">
+        <span class="step" id="step"></span>
+        <p class="text" id="text"></p>
+        <div class="controls">
+          <button id="prev" type="button">Back</button>
+          <button id="next" type="button" class="primary">Next</button>
+        </div>
+      </div>
+    </div>
+    <p class="note">Click the highlighted areas as a child would, or use Next. In the prototype, the AI's lines are scripted.</p>
+  </div>
+  <script src="player.js?v=1"></script>
+</body>
+</html>

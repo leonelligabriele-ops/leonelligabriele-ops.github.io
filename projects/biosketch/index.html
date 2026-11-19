@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>BioSketch · Gabriele Leonelli</title>
   <meta name="description" content="BioSketch: an LLM-programming tool for non-linear, slow design exploration with biodata, built around a branching exploration tree.">
-  <link rel="stylesheet" href="../../assets/site.css?v=4">
+  <link rel="stylesheet" href="../../assets/site.css?v=5">
   <style>
     .tree-hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px 32px; align-items: start; margin-top: 8px; }
     .tree-hero figure { margin: 0; }
@@ -65,7 +65,7 @@
           <li><span class="pill refine">Refine</span> The interpretation branch is developed into a near-final app with a “For me” view and a “Family &amp; physio” view. The other branches stay on the canvas.</li>
         </ol>
         <div class="actions">
-          <a class="button" href="app/">Open the live tree →</a>
+          <a class="button" href="app/" data-demo="app/" data-demo-title="BioSketch: live exploration tree (demo mode, synthetic data)">Open the live tree →</a>
           <a href="session.html">or read the session card by card</a>
         </div>
         <p class="note" style="margin-top:12px">The live tree is the real BioSketch interface in demo mode. Click any card to open its prototype, which runs on synthetic data, and its “Why this design?” explanation. You can also branch new ideas yourself. Without an AI connected, new cards get placeholder output. The example prototypes were written by hand, following the exact prompts BioSketch sends, to show typical output.</p>
@@ -118,5 +118,6 @@
 
     <footer>© 2026 Gabriele Leonelli</footer>
   </main>
+  <script src="../../assets/demo-modal.js?v=1" defer></script>
 </body>
 </html>
