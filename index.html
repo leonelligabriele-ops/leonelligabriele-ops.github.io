@@ -3,191 +3,160 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Gabriele Leonelli</title>
-  <meta name="description" content="Gabriele Leonelli — HCI researcher at Umeå University working on human–AI co-creation, biodata, and vibe-coding.">
-  <style>
-    :root {
-      --bg: #ffffff;
-      --text: #1a1a1a;
-      --muted: #666;
-      --line: #e5e5e5;
-      --link: #0b5fff;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #111;
-        --text: #eaeaea;
-        --muted: #9a9a9a;
-        --line: #2a2a2a;
-        --link: #6ea8ff;
-      }
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    }
-    main { max-width: 720px; margin: 0 auto; padding: 64px 16px; }
-    h1 { font-size: 2rem; margin: 0 0 4px; }
-    h2 {
-      font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em;
-      color: var(--muted); margin: 48px 0 16px; padding-bottom: 8px;
-      border-bottom: 1px solid var(--line);
-    }
-    h3 { font-size: 1rem; margin: 0; }
-    p { margin: 0 0 8px; }
-    a { color: var(--link); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .tagline { color: var(--muted); margin-bottom: 8px; }
-    .interests { margin-bottom: 16px; }
-    .links a { margin-right: 16px; white-space: nowrap; }
-    .item { margin-bottom: 24px; }
-    .meta { color: var(--muted); font-size: 0.9rem; }
-    .row { display: flex; justify-content: space-between; gap: 4px 16px; flex-wrap: wrap; }
-
-    /* Publications */
-    .pubs { list-style: none; padding: 0; margin: 0; }
-    .pubs li { margin-bottom: 20px; }
-    .pub-title { font-weight: 600; }
-    .pub-authors .me { font-weight: 600; text-decoration: underline; }
-    .pub-venue { font-style: italic; }
-    .pub-links a { font-size: 0.85rem; margin-right: 12px; }
-    .tag {
-      display: inline-block; font-size: 0.75rem; padding: 0 6px; margin-left: 6px;
-      border: 1px solid var(--line); border-radius: 4px; color: var(--muted); vertical-align: middle;
-    }
-
-    footer { margin-top: 64px; color: var(--muted); font-size: 0.85rem; }
-  </style>
+  <title>Gabriele Leonelli · HCI researcher</title>
+  <meta name="description" content="Gabriele Leonelli, Research Assistant and M.Sc. student in HCI at Umeå University. Looking for a PhD position in HCI, focusing on human–AI interaction.">
+  <link rel="preload" href="assets/fonts/newsreader-wght.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/instrument-sans-wght.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/site.css?v=3">
 </head>
 <body>
-  <main>
+  <main class="home">
 
-    <!-- ===================== HEADER ===================== -->
-    <header>
-      <h1>Gabriele Leonelli</h1>
-      <p class="tagline">Research Assistant and M.Sc. student · Department of Informatics, Umeå University</p>
-      <p class="interests"><strong>Research interests:</strong> human–AI co-creation, biodata, vibe-coding.</p>
-      <p class="links">
-        <a href="mailto:gabriele.leonelli@umu.se">gabriele.leonelli@umu.se</a>
-        <a href="mailto:leonelli.gabriele@gmail.com">leonelli.gabriele@gmail.com</a>
-      </p>
-      <p class="links">
-        <a href="cv.pdf">CV (PDF)</a>
-        <a href="https://scholar.google.com/citations?user=8M2zGu8AAAAJ&amp;hl=en">Google Scholar</a>
-        <a href="https://orcid.org/0009-0003-2731-7673">ORCID</a>
-        <a href="https://github.com/leonelligabriele-ops">GitHub</a>
-        <a href="https://www.linkedin.com/in/gabriele-leonelli-a51011214/">LinkedIn</a>
-      </p>
+    <header class="intro">
+      <img class="portrait" src="assets/img/portrait-400.webp" srcset="assets/img/portrait-400.webp 400w, assets/img/portrait.webp 800w" sizes="140px" alt="Portrait of Gabriele Leonelli" width="400" height="400">
+      <div>
+        <h1>Gabriele Leonelli</h1>
+        <p class="tagline">Research Assistant and M.Sc. student in HCI, Department of Informatics, Umeå University</p>
+        <p class="lead">I study how people imagine and build with AI, especially when using data as a design material.</p>
+        <p class="looking">Looking for a <b>PhD position in HCI</b>, focusing on human–AI interaction.</p>
+        <div class="actions">
+          <a class="btn" href="cv.pdf">Download CV (PDF)</a>
+          <a class="quiet" href="mailto:gabriele.leonelli@umu.se">gabriele.leonelli@umu.se</a>
+        </div>
+        <p class="profiles">
+          <a href="https://scholar.google.com/citations?user=8M2zGu8AAAAJ&amp;hl=en">Google Scholar</a>
+          <a href="https://orcid.org/0009-0003-2731-7673">ORCID</a>
+          <a href="https://github.com/leonelligabriele-ops">GitHub</a>
+          <a href="https://www.linkedin.com/in/gabriele-leonelli-a51011214/">LinkedIn</a>
+        </p>
+      </div>
     </header>
 
-    <!-- ===================== PUBLICATIONS ===================== -->
-    <section>
+    <nav class="toc" aria-label="On this page">
+      <a href="#publications">Publications</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="cv.pdf">CV</a>
+    </nav>
+
+    <section id="publications">
       <h2>Publications</h2>
-      <ol class="pubs" reversed>
-        <!-- Copy one <li> per publication. Newest first. -->
-        <li>
-          <div class="pub-title">Reproducing the Habitual: How May LLM-Assisted Prototyping Constrain Biodata Design Through Metaphor</div>
-          <div class="pub-authors"><span class="me">G. Leonelli</span>, P. Sanches</div>
-          <div><span class="pub-venue">Nordes 2027</span> <span class="tag">Under review</span></div>
-        </li>
-        <li>
-          <div class="pub-title">AI-Enhanced Interactive Storytelling: Supporting Executive Functions and Cultural Learning Through Participatory Design</div>
-          <div class="pub-authors"><span class="me">G. Leonelli</span>, A. Güneysu</div>
-          <div><span class="pub-venue">Proceedings of the 13th International Conference on Human-Agent Interaction (HAI ’25)</span>, Yokohama, Japan. ACM, pp. 353–356, 2025 <span class="tag">Peer-reviewed poster</span></div>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1145/3765766.3765806">DOI</a>
-          </div>
-        </li>
-      </ol>
-    </section>
-
-    <!-- ===================== PROJECTS ===================== -->
-    <section>
-      <h2>Projects</h2>
-      <!-- Copy one .item per project. Most relevant first. -->
-      <div class="item">
-        <h3><a href="projects/biosketch/">BioSketch: LLM-assisted design exploration with biodata</a></h3>
-        <p class="meta">Human–AI co-creation · LLM-based prototyping · 2026</p>
-        <p>An LLM-programming tool for non-linear, slow ideation with biodata as a design material. Every idea is a running prototype on a branching exploration tree, so alternatives stay open side by side. Used in human–AI co-creation sessions with experts and non-experts, analysed through think-aloud protocols and artifact analysis. The analysis shows how participants and LLMs make sense of biodata through metaphor and how frictions between those metaphors expose biases.</p>
-        <p class="pub-links"><a href="projects/biosketch/">Project page</a> <a href="projects/biosketch/app/">Explore the live tree</a> <a href="https://github.com/leonelligabriele-ops/design_exploration_AI">Code</a></p>
+      <div class="entry">
+        <span class="when">2027</span>
+        <h3>Reproducing the Habitual: How May LLM-Assisted Prototyping Constrain Biodata Design Through Metaphor <span class="tag">Under review</span></h3>
+        <p class="meta">G. Leonelli, P. Sanches · Nordes 2027</p>
       </div>
-      <div class="item">
-        <h3><a href="projects/storytelling/">AI-enhanced interactive storytelling for children</a></h3>
-        <p class="meta">Participatory design · High-fidelity prototyping · 2025</p>
-        <p>A co-designed interactive digital narrative prototype that supports children's executive functions and cultural learning through parent–child interaction. Evaluated with semi-structured interviews, reflexive thematic analysis and usability testing. Published as a peer-reviewed poster at HAI ’25.</p>
-        <p class="pub-links"><a href="projects/storytelling/">Project page &amp; clickable demo</a> <a href="https://doi.org/10.1145/3765766.3765806">Paper</a></p>
+      <div class="entry">
+        <span class="when">2025</span>
+        <h3>AI-Enhanced Interactive Storytelling: Supporting Executive Functions and Cultural Learning Through Participatory Design <span class="tag">Peer-reviewed poster</span></h3>
+        <p class="meta">G. Leonelli, A. Güneysu · Proceedings of the 13th International Conference on Human-Agent Interaction (HAI ’25), Yokohama, Japan · ACM, pp. 353–356</p>
+        <p class="links"><a href="https://doi.org/10.1145/3765766.3765806" aria-label="DOI for AI-Enhanced Interactive Storytelling (HAI ’25)">DOI: 10.1145/3765766.3765806</a></p>
       </div>
     </section>
 
-    <!-- ===================== EXPERIENCE ===================== -->
-    <section>
+    <section id="projects">
+      <h2>Selected projects</h2>
+      <article class="proj">
+        <span class="when">2026</span>
+        <a class="thumb" href="projects/biosketch/" tabindex="-1" aria-hidden="true"><img src="projects/biosketch/screenshots/tree.png" alt="" loading="lazy"></a>
+        <div>
+          <h3><a href="projects/biosketch/">BioSketch: designing with AI and biodata</a></h3>
+          <p class="meta">M.Sc. thesis and research assistant work · with Dr. Pedro Sanches</p>
+          <p>A tool where every idea becomes a running prototype on a branching tree, so alternatives stay open. I studied how experts and non-experts use it, and how people and LLMs make sense of biodata through metaphor.</p>
+          <p class="links">
+            <a class="quiet" href="projects/biosketch/app/">Explore the live tree →</a>
+            <a href="projects/biosketch/" aria-label="BioSketch project page">Project page</a>
+            <a href="https://github.com/leonelligabriele-ops/design_exploration_AI" aria-label="BioSketch code on GitHub">Code</a>
+          </p>
+        </div>
+      </article>
+      <article class="proj">
+        <span class="when">2025</span>
+        <a class="thumb" href="projects/storytelling/" tabindex="-1" aria-hidden="true"><img src="projects/storytelling/screens/04-story-start.webp?v=2" alt="" loading="lazy"></a>
+        <div>
+          <h3><a href="projects/storytelling/">AI storytelling for children and parents</a></h3>
+          <p class="meta">M.Sc. thesis · with Dr. Arzu Güneysu · HAI ’25 poster</p>
+          <p>A co-designed interactive story where a child and an AI take turns, and the tasks invite family memories. It supports executive functions and cultural learning through parent–child play.</p>
+          <p class="links">
+            <a class="quiet" href="projects/storytelling/#try">Try the clickable prototype →</a>
+            <a href="projects/storytelling/" aria-label="Storytelling project page">Project page</a>
+            <a href="https://doi.org/10.1145/3765766.3765806" aria-label="Storytelling paper (HAI ’25)">Paper</a>
+          </p>
+        </div>
+      </article>
+    </section>
+
+    <section id="experience">
       <h2>Experience</h2>
-      <div class="item">
-        <div class="row">
-          <h3>Research Assistant, Human–Computer Interaction</h3>
-          <span class="meta">Sept 2026 – present</span>
-        </div>
-        <p class="meta">Department of Informatics, Umeå University · with Dr. Pedro Sanches</p>
-        <p>Extended my thesis dataset and analysis into a full paper, submitted to Nordes 2027, on how humans and LLMs make sense of biodata through metaphor. The paper calls for critical attention to LLM-assisted coding applied to bodies and health.</p>
+
+      <p class="sub">Research</p>
+      <div class="entry">
+        <span class="when">2026–</span>
+        <h3>Research Assistant, Human–Computer Interaction</h3>
+        <p class="meta">Department of Informatics, Umeå University · since September 2026 · with Dr. Pedro Sanches</p>
+        <p>Extended my thesis dataset and analysis into a full paper on how people and LLMs make sense of biodata through metaphor, and why LLM-assisted coding for bodies and health needs critical attention.</p>
       </div>
-      <div class="item">
-        <div class="row">
-          <h3>Teaching Assistant, Human–Computer Interaction</h3>
-          <span class="meta">Sept 2025 – present</span>
-        </div>
-        <p class="meta">Department of Computer Science, Umeå University · Course lead: Dr. Arzu Güneysu</p>
-        <p>In autumn 2026, taught 4 hours per week to 45 students, covering user-centred design, user research, prototyping, usability evaluation and HCI theory, with a focus on fourth-wave HCI and LLM-assisted programming. In autumn 2025, supervised student projects, gave feedback on research design and analysis, and contributed to grading.</p>
+
+      <p class="sub">Teaching</p>
+      <div class="entry">
+        <span class="when">2025–</span>
+        <h3>Teaching Assistant, Human–Computer Interaction</h3>
+        <p class="meta">Department of Computer Science, Umeå University · since September 2025 · course lead Dr. Arzu Güneysu</p>
+        <p>Autumn 2026: taught 45 students, 4 hours a week, in user research, prototyping, evaluation and HCI theory, with a focus on fourth-wave HCI and LLM-assisted programming. Autumn 2025: supervised student projects, gave feedback on research design and analysis, and graded.</p>
       </div>
-      <div class="item">
-        <div class="row">
-          <h3>Peer Reviewer, <em>New Review of Hypermedia and Multimedia</em></h3>
-        </div>
-        <p class="meta">Taylor &amp; Francis</p>
-        <p>Review submissions on interactive media, HCI and digital narrative.</p>
+
+      <p class="sub">Reviewing</p>
+      <div class="entry">
+        <h3>Reviewer, <i>New Review of Hypermedia and Multimedia</i></h3>
+        <p class="meta">Taylor &amp; Francis · submissions on interactive media, HCI and digital narrative</p>
       </div>
-      <div class="item">
-        <div class="row">
-          <h3>Client Advisor, Swedbank</h3>
-          <span class="meta">Apr 2024 – present</span>
-        </div>
-        <p class="meta">Umeå, Sweden</p>
-        <p>Advise clients on financial products, translating complex information into accessible guidance.</p>
+
+      <p class="sub">Other experience</p>
+      <div class="entry">
+        <span class="when">2024–</span>
+        <h3>Client Advisor, Swedbank</h3>
+        <p class="meta">Umeå · since April 2024 · explaining complex financial information in plain language</p>
       </div>
     </section>
 
-    <!-- ===================== EDUCATION ===================== -->
-    <section>
+    <section id="methods">
+      <h2>Methods &amp; skills</h2>
+      <dl class="skills">
+        <dt>Qualitative methods</dt>
+        <dd>Participatory design, human–AI co-creation sessions, think-aloud protocols, semi-structured interviews, artifact analysis, reflexive thematic analysis</dd>
+        <dt>Design &amp; prototyping</dt>
+        <dd>Figma, low- to high-fidelity prototyping, LLM-based prototyping</dd>
+        <dt>Languages</dt>
+        <dd>Italian (native), English (C1), Swedish (C1)</dd>
+      </dl>
+    </section>
+
+    <section id="education">
       <h2>Education</h2>
-      <div class="item">
-        <div class="row">
-          <h3>M.Sc. in Human–Computer Interaction and User Experience</h3>
-          <span class="meta">2025 – 2027</span>
-        </div>
-        <p class="meta">Umeå University, Sweden</p>
-        <p>Thesis: <em>Co-Creating with AI: Non-Linear Design Exploration of Bio-Data Driven Application</em> · Supervisor: Dr. Pedro Sanches</p>
+      <div class="entry">
+        <span class="when">2025–27</span>
+        <h3>M.Sc. Human–Computer Interaction and User Experience</h3>
+        <p class="meta">Umeå University</p>
+        <p>Thesis: <i>Co-Creating with AI: Non-Linear Design Exploration of Bio-Data Driven Application</i> · supervisor Dr. Pedro Sanches</p>
       </div>
-      <div class="item">
-        <div class="row">
-          <h3>M.Sc. in Cognitive Science</h3>
-          <span class="meta">2023 – 2025</span>
-        </div>
-        <p class="meta">Umeå University, Sweden</p>
-        <p>Thesis: <em>AI-Enhanced Interactive Storytelling: Supporting Executive Functions and Cultural Learning Through Participatory Design</em> · Supervisor: Dr. Arzu Güneysu</p>
+      <div class="entry">
+        <span class="when">2023–25</span>
+        <h3>M.Sc. Cognitive Science</h3>
+        <p class="meta">Umeå University</p>
+        <p>Thesis: <i>AI-Enhanced Interactive Storytelling: Supporting Executive Functions and Cultural Learning Through Participatory Design</i> · supervisor Dr. Arzu Güneysu</p>
       </div>
-      <div class="item">
-        <div class="row">
-          <h3>B.A. in Philosophy</h3>
-          <span class="meta">2019 – 2022</span>
-        </div>
+      <div class="entry">
+        <span class="when">2019–22</span>
+        <h3>B.A. Philosophy</h3>
         <p class="meta">University of Roma Tre, Italy</p>
         <p>Philosophy of mind, epistemology and logic.</p>
       </div>
     </section>
 
-    <footer>© 2026 Gabriele Leonelli · Last updated November 2026</footer>
+    <footer>
+      Gabriele Leonelli · <a href="mailto:gabriele.leonelli@umu.se">gabriele.leonelli@umu.se</a> · <a href="cv.pdf">CV (PDF)</a>
+    </footer>
   </main>
 </body>
 </html>

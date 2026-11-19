@@ -1,3 +1,6 @@
 # Original Figma exports (~13 MB each). Kept locally as source files;
 # the website uses compressed copies in projects/*/screens/.
 figma-exports/
+
+# Design workflow notes and plans (not part of the website)
+.design-foundations/

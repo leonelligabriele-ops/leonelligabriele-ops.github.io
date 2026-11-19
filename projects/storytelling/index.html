@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AI-Enhanced Interactive Storytelling · Gabriele Leonelli</title>
   <meta name="description" content="An interactive digital narrative where children and parents co-create stories with an AI, supporting executive functions and cultural learning.">
-  <link rel="stylesheet" href="../../assets/site.css">
+  <link rel="stylesheet" href="../../assets/site.css?v=3">
   <style>
     /* ---------- Clickable prototype player ---------- */
     .player { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--soft); }
@@ -15,7 +15,7 @@
       position: absolute; border: 3px solid #ffb400; border-radius: 12px; background: rgba(255, 180, 0, 0.18);
       cursor: pointer; padding: 0; animation: pulse 1.6s ease-in-out infinite;
     }
-    .hotspot:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
+    .hotspot:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; box-shadow: 0 0 0 6px var(--bg); }
     .stage.flash .hotspot { animation: flash 0.5s ease-in-out 2; }
     @keyframes pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(255, 180, 0, 0.6); } 50% { box-shadow: 0 0 0 10px rgba(255, 180, 0, 0); } }
     @keyframes flash { 50% { background: rgba(255, 180, 0, 0.6); } }
@@ -28,7 +28,7 @@
       font: inherit; font-size: 0.85rem; padding: 6px 14px; border-radius: 6px; cursor: pointer;
       border: 1px solid var(--line); background: var(--bg); color: var(--text);
     }
-    .controls button.primary { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
+    .controls button.primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); font-weight: 600; }
     .controls button:disabled { opacity: 0.4; cursor: default; }
     .path { font-size: 0.75rem; padding: 1px 8px; border-radius: 10px; border: 1px solid var(--line); color: var(--muted); }
   </style>
@@ -47,7 +47,7 @@
       <dt>Output</dt><dd>Peer-reviewed poster, HAI ’25 (ACM) · <a href="https://doi.org/10.1145/3765766.3765806">doi.org/10.1145/3765766.3765806</a></dd>
     </dl>
 
-    <h2>Try the prototype</h2>
+    <h2 id="try">Try the prototype</h2>
     <p>A short walkthrough of the high-fidelity prototype. Click the <b>highlighted areas</b> as a child would, or use <b>Next</b>. On the landscape screen you can choose between two paths.</p>
 
     <div class="player" id="player">
