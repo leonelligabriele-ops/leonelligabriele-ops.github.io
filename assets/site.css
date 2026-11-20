@@ -27,9 +27,12 @@
   --text: var(--ink);
   --line: var(--rule);
   --link: var(--accent);
+  color-scheme: light;
 }
+/* Dark colours: follow the system setting unless the visitor picked light,
+   or force them when the visitor picked dark (button in assets/theme.js). */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --bg: #11161C;
     --ink: #E2E7ED;
     --muted: #9DA8B4;
@@ -37,7 +40,18 @@
     --accent: #8CC0E6;
     --on-accent: #0D1620;
     --soft: #19202A;
+    color-scheme: dark;
   }
+}
+:root[data-theme="dark"] {
+  --bg: #11161C;
+  --ink: #E2E7ED;
+  --muted: #9DA8B4;
+  --rule: #29313B;
+  --accent: #8CC0E6;
+  --on-accent: #0D1620;
+  --soft: #19202A;
+  color-scheme: dark;
 }
 
 /* ---------- Base ---------- */
@@ -211,14 +225,27 @@ section { scroll-margin-top: 24px; }
   .demo-full { display: none; }
 }
 
+/* ---------- Light / dark toggle ---------- */
+.theme-toggle {
+  position: absolute; top: 12px; right: 16px; z-index: 5;
+  display: inline-flex; align-items: center; gap: 7px;
+  min-height: 44px; padding: 0 14px;
+  font: 500 0.85rem/1 var(--f-ui); color: var(--muted);
+  background: var(--bg); border: 1px solid var(--rule); border-radius: var(--r-pill);
+  cursor: pointer;
+}
+.theme-toggle:hover { color: var(--ink); border-color: var(--muted); }
+.theme-toggle svg { width: 16px; height: 16px; flex: none; }
+
 /* ---------- Print ---------- */
 @media print {
-  :root { --bg: #fff; --ink: #000; --muted: #444; --rule: #bbb; --accent: #000; --on-accent: #000; --soft: #eee; }
+  /* :root:root outranks the dark-mode rules above, so paper is always light. */
+  :root:root { color-scheme: light; --bg: #fff; --ink: #000; --muted: #444; --rule: #bbb; --accent: #000; --on-accent: #000; --soft: #eee; }
   @page { margin: 16mm 14mm; }
   body { font-size: 10.5pt; background: #fff; color: #000; }
   main, main.home, main.wide { max-width: none; padding: 0; }
   .toc, .thumb, .tree-fig, .tree-hero figure, .links a.quiet, .back, .next-proj, .player, #try ~ p.note, .demo-modal,
-  .button, .phone-only, .tree-hero .actions, .tree-hero .note { display: none !important; }
+  .button, .phone-only, .tree-hero .actions, .tree-hero .note, .theme-toggle { display: none !important; }
   a { color: #000; text-decoration: none; }
   .btn { background: none; color: #000; padding: 0; min-height: 0; font-weight: 600; }
   .btn[href$="cv.pdf"]::after { content: " (leonelligabriele-ops.github.io/cv.pdf)"; font-weight: 400; font-size: 0.85em; }
