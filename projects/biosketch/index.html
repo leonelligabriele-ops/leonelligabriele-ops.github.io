@@ -52,6 +52,7 @@
     <p class="tagline">An LLM-programming tool for non-linear, slow design exploration with biodata</p>
 
     <dl class="facts">
+      <dt>Question</dt><dd>Can an LLM-programming tool help people sketch applications with biodata, and how does the LLM frame the body along the way?</dd>
       <dt>Context</dt><dd>M.Sc. thesis in Human–Computer Interaction (15 hp), then Research Assistant work, Department of Informatics, Umeå University, 2026</dd>
       <dt>Supervisor</dt><dd>Dr. Pedro Sanches</dd>
       <dt>Methods</dt><dd>Human–AI co-creation sessions, think-aloud protocols, artifact analysis</dd>
@@ -116,23 +117,23 @@
     <p>Each card holds a running prototype, and the AI explains its design choices beside it, so they can be questioned. These are the five cards of the tree above, as they look in the live tool.</p>
     <div class="gallery one">
       <figure>
-        <img src="screenshots/sketch-v2.webp" alt="A Sketch card: two hand-drawn screens, with the AI’s explanation beside them" loading="lazy" width="1400">
+        <img src="screenshots/sketch-v2.webp" srcset="screenshots/sketch-v2-700.webp 700w, screenshots/sketch-v2.webp 1400w" sizes="(max-width: 960px) calc(100vw - 32px), 928px" alt="A Sketch card: two hand-drawn screens, with the AI’s explanation beside them" loading="lazy" width="1400" height="821">
         <figcaption><b>Sketch.</b> A very simple screen for them and a longer view for family or physio. Open questions stay as “?” boxes. Beside it, the AI explains what the sketch shows (“What does it show?”).</figcaption>
       </figure>
       <figure>
-        <img src="screenshots/explore-representation-v2.webp" alt="An Explore card showing walking as a winding path, with the AI’s Why this design explanation" loading="lazy" width="1400">
+        <img src="screenshots/explore-representation-v2.webp" srcset="screenshots/explore-representation-v2-700.webp 700w, screenshots/explore-representation-v2.webp 1400w" sizes="(max-width: 960px) calc(100vw - 32px), 928px" alt="An Explore card showing walking as a winding path, with the AI’s Why this design explanation" loading="lazy" width="1400" height="1088">
         <figcaption><b>Explore: new representation.</b> Walking as a journey: 113 km since August, with leaves marking longer walks outside.</figcaption>
       </figure>
       <figure>
-        <img src="screenshots/explore-interaction-v2.webp" alt="An Explore card with one large button, How did I do yesterday, and the AI’s explanation" loading="lazy" width="1400">
+        <img src="screenshots/explore-interaction-v2.webp" srcset="screenshots/explore-interaction-v2-700.webp 700w, screenshots/explore-interaction-v2.webp 1400w" sizes="(max-width: 960px) calc(100vw - 32px), 928px" alt="An Explore card with one large button, How did I do yesterday, and the AI’s explanation" loading="lazy" width="1400" height="859">
         <figcaption><b>Explore: new interaction.</b> One big button that answers aloud, compared with their own usual days.</figcaption>
       </figure>
       <figure>
-        <img src="screenshots/explore-interpretation-v2.webp" alt="An Explore card with a calendar comparing each day with the person’s usual, and the AI’s explanation" loading="lazy" width="1400">
+        <img src="screenshots/explore-interpretation-v2.webp" srcset="screenshots/explore-interpretation-v2-700.webp 700w, screenshots/explore-interpretation-v2.webp 1400w" sizes="(max-width: 960px) calc(100vw - 32px), 928px" alt="An Explore card with a calendar comparing each day with the person’s usual, and the AI’s explanation" loading="lazy" width="1400" height="1088">
         <figcaption><b>Explore: new interpretation.</b> Each day compared with their own usual, not a target. Days with a raised resting heart rate are marked.</figcaption>
       </figure>
       <figure>
-        <img src="screenshots/refine-v2.webp" alt="A Refine card: 2,323 steps yesterday and the week as seven circles, with the AI’s explanation" loading="lazy" width="1400">
+        <img src="screenshots/refine-v2.webp" srcset="screenshots/refine-v2-700.webp 700w, screenshots/refine-v2.webp 1400w" sizes="(max-width: 960px) calc(100vw - 32px), 928px" alt="A Refine card: 2,323 steps yesterday and the week as seven circles, with the AI’s explanation" loading="lazy" width="1400" height="993">
         <figcaption><b>Refine.</b> A near-final app with a “For me” view and a “Family &amp; physio” view: large type, one kind sentence, levels written in words as well as colour.</figcaption>
       </figure>
     </div>
@@ -141,8 +142,17 @@
     <p>Prototypes run on real bodily data, not mock-ups. A CSV file, a webcam (pose tracking with MediaPipe) or a Bluetooth sensor streams into every card on the tree at once, so all branches can be compared on the same data. The AI explains its design choices, and a discussion panel lets people question them. Every prompt is recorded, and a session can be exported as one readable file, which makes the tool usable as a research instrument.</p>
 
     <h2>The study</h2>
-    <p>For my M.Sc. thesis, I studied how experts and non-experts use BioSketch to come up with and prototype biodata applications. I ran human–AI co-creation sessions with think-aloud protocols and analysed the prototypes people made.</p>
-    <p>As a Research Assistant with Dr. Pedro Sanches, I extended the dataset and analysis into a full paper. It shows how participants and LLMs make sense of biodata through <b>metaphor</b>, how frictions between their metaphors expose biases, and how ideas emerge as they are re-articulated. It argues for critical attention to LLM-assisted coding when it is applied to bodies and health.</p>
+    <p>For my M.Sc. thesis, I studied how experts and non-experts use BioSketch to come up with and prototype biodata applications. Participants sketched with BioSketch and with a standard AI chatbot. I ran human–AI co-creation sessions with think-aloud protocols and analysed the prototypes people made.</p>
+    <p>As a Research Assistant with Dr. Pedro Sanches, I extended the dataset and analysis into a full paper, accepted at Nordes 2027. We set out to test whether the tool helps people sketch with biodata. We found instead that the way the LLM represents bodies, mostly through <b>metaphor</b>, shapes what people imagine.</p>
+
+    <h2>What we found</h2>
+    <p><b>BioSketch kept the design space open; the chatbot closed it.</b> The chatbot produced complete apps so quickly that participants stopped exploring early, and it used only one metaphor: graphs. In BioSketch, branching meant that no single sketch felt finished, and clickable moves meant people did not have to put every idea into a written prompt.</p>
+    <p><b>Metaphors moved the uncertainty onto the person.</b> To present the data, the LLM turned bodies into metaphors: a “body weather forecast”, a “Wellness Constellation”, a garden. A metaphor makes data easier to read, but leaves the person asking what it means for them. For one participant, this ambiguity sparked reflection and new ideas. For the others it got in the way, and the LLM’s big creative jumps caused friction.</p>
+    <p><b>Some metaphors were in our own code.</b> BioSketch’s system prompt, itself drafted with an LLM, told the model to colour interfaces “green=good, amber=caution, red=alert” and suggested showing data as “something that breathes, grows, decays”. The garden that one participant rejected most likely came from that line. Other metaphors, such as weather and orbits, appeared without any prompt. Together they frame a body as a system to keep in balance or a climate to predict, and “green=good” already decides that a body has a good and a bad state.</p>
+
+    <h2>Looking back</h2>
+    <p>The study started as a test of a tool and became a study of the assumptions inside it, including assumptions I had built in myself. Reading the code, its comments and the AI’s explanations alongside the sessions turned out to be essential for understanding how participants reacted.</p>
+    <p>This was an exploratory study of an early prototype, so the findings are early evidence, not general claims. Two directions follow from it: designing for productive ambiguity, where person and LLM build an interpretation together through the interaction, and looking more critically at LLM-assisted coding when it is applied to bodies and health.</p>
 
     <h2>My role</h2>
     <ul>
@@ -156,6 +166,6 @@
 
     <footer>Gabriele Leonelli · <a href="mailto:gabriele.leonelli@umu.se">gabriele.leonelli@umu.se</a> · <a href="../../cv.pdf" target="_blank" rel="noopener">CV (PDF)<span class="sr-only"> (opens in a new tab)</span></a></footer>
   </main>
-  <script src="../../assets/demo-modal.js?v=1" defer></script>
+  <script src="../../assets/demo-modal.js?v=2" defer></script>
 </body>
 </html>

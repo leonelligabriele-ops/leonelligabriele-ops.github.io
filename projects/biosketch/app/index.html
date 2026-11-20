@@ -4,10 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BioSketch demo</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+    <meta name="description" content="BioSketch in demo mode: one exploration tree for an activity app for people over 75, from first sketch to near-final app. By Gabriele Leonelli, Umeå University.">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="preload" href="./vendor/nunito-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <style>
+      /* Nunito, self-hosted (SIL OFL, see vendor/NUNITO-OFL.txt): no request to Google, no render-blocking stylesheet. */
+      @font-face{font-family:"Nunito";font-style:normal;font-display:swap;font-weight:200 1000;src:url(./vendor/nunito-latin-ext-wght-normal.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+      @font-face{font-family:"Nunito";font-style:normal;font-display:swap;font-weight:200 1000;src:url(./vendor/nunito-latin-wght-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+      /* Portfolio copy: darker text colours so every label reaches WCAG AA (4.5:1). */
+      html:root{--text-tertiary:#736A62;--accent:#6544EE}
+      .move-label[style*="124, 92, 252"]{color:#6544EE!important;border-color:#6544EE!important}
+      .move-label[style*="5, 150, 105"]{color:#047857!important}
+      .move-label[style*="224, 160, 48"]{color:#8A5A00!important}
+    </style>
+    <script defer src="./vendor/papaparse.min.js"></script>
     <script type="module" crossorigin src="./assets/index-D-3ucq-W.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-op0oUVHW.css">
   </head>

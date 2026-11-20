@@ -25,16 +25,28 @@
   var stage = document.getElementById('stage'), img = document.getElementById('screen');
   var trail = [], current = 'theme';
 
-  // Preload all screens so clicks feel instant.
-  Object.keys(SCREENS).forEach(function (k) { new Image().src = 'screens/' + SCREENS[k].img + '.webp?v=2'; });
-
   function nextOf(key) { var s = SCREENS[key]; return s.next || (s.go && s.go[0][1]) || null; }
+  function targets(key) { var s = SCREENS[key]; return (s.go || []).map(function (g) { return g[1]; }).concat(s.next ? [s.next] : []); }
+
+  // Preload only the screens the visitor can reach in the next two steps, so clicks feel
+  // instant without downloading all 15 screens (about 2.8 MB) up front.
+  var loaded = {};
+  function preload(key) {
+    if (loaded[key]) return;
+    loaded[key] = true;
+    new Image().src = 'screens/' + SCREENS[key].img + '.webp?v=2';
+  }
+  function preloadAhead(key) {
+    targets(key).forEach(function (k) { preload(k); targets(k).forEach(preload); });
+  }
 
   function show(key, push) {
     if (push) trail.push(current);
     current = key;
     var s = SCREENS[key];
+    loaded[key] = true;
     img.src = 'screens/' + s.img + '.webp?v=2';
+    preloadAhead(key);
     img.alt = s.text.replace(/<[^>]+>/g, '');
     stage.querySelectorAll('.hotspot').forEach(function (h) { h.remove(); });
     (s.go || []).forEach(function (g) {

@@ -22,6 +22,7 @@
   var full = dialog.querySelector('.demo-full');
   var closeBtn = dialog.querySelector('.demo-close');
   var opener = null;
+  full.href = links[0].href;                 // a real address from the start (set again on each open)
 
   function close() { dialog.close(); }
 
